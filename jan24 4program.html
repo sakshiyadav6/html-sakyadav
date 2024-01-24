@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+     .container{
+        height: 800px;
+        width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }   
+     .try{
+        height:600px;
+        width:600px ;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap: wrap;
+        gap: 10px;
+     }
+     .box{
+        height: 150px;
+        width: 150px;
+        border-radius: 5px;
+        box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+        font-size:40px;
+     }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="try">
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    </div>
+    </div>
+    <script>
+      let b = document.querySelectorAll('.box');
+      let chance0=true;
+      b.forEach((box)=>{
+      box.addEventListener("click",()=>{
+         console.log("button ckick");
+        if(chance0){
+         box.innerText="X";
+         chance0=false;
+        }else{
+         box.innerText="0";
+         chance0=true;
+        }
+        box.disabled=true;
+      })   
+      })
+    </script>
+</body>
+</html>
